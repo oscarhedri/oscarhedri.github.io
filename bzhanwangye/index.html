@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>b站网页版-哔哩哔哩网页版怎么用_在线观看入口与PC端功能</title>
+<meta name="description" content="b站网页版使用指南：介绍哔哩哔哩网页版在线观看入口、PC端网页功能、登录与收藏同步、分区浏览与播放设置，帮助你在浏览器里顺畅使用b站网页版。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fb7299'/%3E%3Cpath d='M16 26h32v16a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z' fill='%23fff'/%3E%3Cpath d='M22 18l8 6M42 18l-8 6' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='34' r='3' fill='%23fb7299'/%3E%3Ccircle cx='38' cy='34' r='3' fill='%23fb7299'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --pink:#fb7299;
+    --pink-deep:#e45c85;
+    --blue:#00a1d6;
+    --ink:#1b1f26;
+    --ink-2:#4a5361;
+    --ink-3:#7b8494;
+    --line:#e8ebf0;
+    --bg:#f7f8fb;
+    --card:#ffffff;
+    --radius:14px;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-bar{display:flex;align-items:center;gap:26px;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.2px;white-space:nowrap}
+  .logo .mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(140deg,var(--pink),#ff9db6);
+    display:grid;place-items:center;flex:none;
+    box-shadow:0 6px 14px rgba(251,114,153,.32);
+  }
+  .logo .mark svg{width:24px;height:24px}
+  nav.main{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  nav.main a{
+    padding:8px 12px;border-radius:9px;font-size:14.5px;color:var(--ink-2);
+    transition:.18s;white-space:nowrap;
+  }
+  nav.main a:hover{background:#fdeef3;color:var(--pink-deep)}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--pink);color:#fff;font-weight:600;font-size:14.5px;
+    padding:9px 18px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 6px 16px rgba(251,114,153,.3);transition:.18s;
+  }
+  .nav-cta:hover{background:var(--pink-deep);transform:translateY(-1px)}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:9px;padding:7px 9px;cursor:pointer}
+  .burger span{display:block;width:19px;height:2px;background:var(--ink-2);margin:4px 0;border-radius:2px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 88% -10%, #ffe3ec 0%, rgba(255,227,236,0) 70%),
+      radial-gradient(700px 340px at 5% 0%, #e2f4fb 0%, rgba(226,244,251,0) 72%),
+      #fff;
+    border-bottom:1px solid var(--line);
+    padding:52px 0 56px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;color:var(--pink-deep);
+    background:#fdeef3;border:1px solid #fbd7e3;
+    padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--pink);display:block}
+  h1{
+    font-size:clamp(30px,4.4vw,46px);
+    line-height:1.24;font-weight:800;letter-spacing:-.5px;
+    margin-bottom:16px;
+  }
+  h1 .hl{
+    color:var(--pink-deep);
+    background:linear-gradient(transparent 62%, #ffdbe6 62%);
+    padding:0 2px;
+  }
+  .lede{font-size:16px;color:var(--ink-2);max-width:33em;margin-bottom:26px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:11px;font-weight:700;font-size:15px;
+    transition:.18s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--pink);color:#fff;box-shadow:0 8px 20px rgba(251,114,153,.32)}
+  .btn-primary:hover{background:var(--pink-deep);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:#cfd6e0;background:#fafbfd}
+  .hero-note{margin-top:18px;font-size:13px;color:var(--ink-3);display:flex;gap:16px;flex-wrap:wrap}
+  .hero-note span{display:inline-flex;align-items:center;gap:6px}
+  .dot-ok{width:15px;height:15px;flex:none;color:var(--blue)}
+
+  /* player mock */
+  .player{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    box-shadow:0 22px 50px -22px rgba(27,31,38,.28);
+    overflow:hidden;
+  }
+  .player .screen{
+    position:relative;aspect-ratio:16/9;
+    background:linear-gradient(135deg,#2b3240,#4a5568 55%,#6b7280);
+    display:grid;place-items:center;
+  }
+  .player .screen::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(420px 200px at 30% 20%, rgba(251,114,153,.34), transparent 70%);
+  }
+  .play-btn{
+    position:relative;z-index:2;width:62px;height:62px;border-radius:50%;
+    background:rgba(255,255,255,.94);display:grid;place-items:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.3);
+  }
+  .play-btn svg{width:24px;height:24px;color:var(--pink-deep);margin-left:3px}
+  .screen-tag{
+    position:absolute;z-index:2;left:12px;bottom:10px;
+    font-size:11.5px;color:#fff;background:rgba(0,0,0,.42);
+    padding:3px 9px;border-radius:6px;letter-spacing:.3px;
+  }
+  .progress{position:absolute;z-index:2;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.22)}
+  .progress i{display:block;height:100%;width:38%;background:var(--pink)}
+  .player .meta{padding:14px 16px;display:flex;gap:11px;align-items:center}
+  .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(140deg,#00a1d6,#7fd6f0);flex:none}
+  .meta-lines{flex:1;min-width:0}
+  .meta-lines b{display:block;font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .meta-lines small{font-size:12px;color:var(--ink-3)}
+  .pill{font-size:11.5px;color:var(--blue);background:#e6f6fc;border-radius:6px;padding:3px 8px;flex:none;font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding:58px 0}
+  .sec-head{max-width:44em;margin-bottom:30px}
+  .sec-kicker{font-size:13px;font-weight:700;letter-spacing:1.4px;color:var(--pink-deep);text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(21px,2.6vw,27px);line-height:1.36;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .sec-head p{color:var(--ink-2);font-size:15px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;transition:.2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(27,31,38,.3);border-color:#f2d3de}
+  .card .ico{
+    width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:15px;
+    background:#fdeef3;color:var(--pink-deep);
+  }
+  .card:nth-child(2) .ico{background:#e6f6fc;color:#0a7fa8}
+  .card:nth-child(3) .ico{background:#eef4ea;color:#5a8f45}
+  .card .ico svg{width:22px;height:22px}
+  .card h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+  .card p{font-size:14px;color:var(--ink-2)}
+
+  /* split feature */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start}
+  .feature-list{display:grid;gap:0;border-top:1px solid var(--line)}
+  .feature{
+    display:grid;grid-template-columns:34px 1fr;gap:14px;
+    padding:18px 0;border-bottom:1px solid var(--line);
+  }
+  .num{
+    width:30px;height:30px;border-radius:9px;background:#fff;border:1px solid var(--line);
+    display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--pink-deep);
+  }
+  .feature h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+  .feature p{font-size:14px;color:var(--ink-2)}
+
+  .aside-box{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;position:sticky;top:86px;
+  }
+  .aside-box h3{font-size:15.5px;margin-bottom:12px}
+  .aside-box ul{list-style:none;display:grid;gap:10px;font-size:14px;color:var(--ink-2)}
+  .aside-box li{display:flex;gap:9px;align-items:flex-start}
+  .aside-box li::before{
+    content:"";flex:none;width:6px;height:6px;border-radius:50%;
+    background:var(--pink);margin-top:9px;
+  }
+  .aside-foot{
+    margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);
+    font-size:13px;color:var(--ink-3);
+  }
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;position:relative;
+  }
+  .step::before{
+    counter-increment:s;content:"0" counter(s);
+    font-size:13px;font-weight:800;color:#fff;background:var(--pink);
+    border-radius:7px;padding:2px 8px;display:inline-block;margin-bottom:12px;
+  }
+  .step:nth-child(even)::before{background:var(--blue)}
+  .step h3{font-size:15px;margin-bottom:6px}
+  .step p{font-size:13.5px;color:var(--ink-2)}
+
+  /* faq */
+  .faq{max-width:820px}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:0 20px;margin-bottom:12px;
+  }
+  details[open]{border-color:#f4ccd9;box-shadow:0 12px 26px -20px rgba(251,114,153,.55)}
+  summary{
+    cursor:pointer;list-style:none;font-weight:700;font-size:15px;
+    padding:16px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";font-weight:700;color:var(--pink-deep);font-size:19px;line-height:1;flex:none;
+  }
+  details[open] summary::after{content:"–"}
+  details p{font-size:14px;color:var(--ink-2);padding-bottom:18px;max-width:60em}
+
+  /* download band */
+  .band{
+    background:linear-gradient(120deg,#fff1f5,#eef8fc 70%);
+    border:1px solid #f6dbe4;border-radius:20px;
+    padding:34px 32px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .band h2{font-size:21px;margin-bottom:6px}
+  .band p{font-size:14.5px;color:var(--ink-2);max-width:40em}
+  .dl-note{font-size:12.5px;color:var(--ink-3);margin-top:8px}
+  .btn-disabled{
+    display:inline-flex;align-items:center;gap:9px;
+    background:#c9cfd8;color:#fff;font-weight:700;font-size:15px;
+    padding:13px 28px;border-radius:11px;pointer-events:none;cursor:default;
+  }
+  .btn-disabled svg{width:18px;height:18px}
+
+  /* footer */
+  footer.site{
+    background:#fff;border-top:1px solid var(--line);
+    padding:40px 0 30px;margin-top:10px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px}
+  .foot-brand p{font-size:13.5px;color:var(--ink-3);margin-top:12px;max-width:30em}
+  .foot-col h4{font-size:13.5px;font-weight:700;margin-bottom:10px}
+  .foot-col ul{list-style:none;display:grid;gap:7px;font-size:13.5px;color:var(--ink-2)}
+  .foot-col a:hover{color:var(--pink-deep)}
+  .foot-bottom{
+    margin-top:28px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .cards{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr;gap:26px}
+    .aside-box{position:static}
+    .steps{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media (max-width:720px){
+    nav.main{
+      display:none;position:absolute;top:66px;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;padding:10px 14px;gap:2px;
+    }
+    nav.main.open{display:flex}
+    nav.main a{padding:11px 10px}
+    .burger{display:block;order:3}
+    .nav-cta{display:none}
+    .nav-bar{gap:12px}
+    .hero{padding:36px 0 42px}
+    section{padding:42px 0}
+    .cards{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .band{padding:26px 22px}
+    .band .btn-disabled{width:100%;justify-content:center}
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-bar">
+    <a class="logo" href="#top" aria-label="b站网页版首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 25h34v17a6 6 0 0 1-6 6H21a6 6 0 0 1-6-6z" fill="#fff"/>
+          <path d="M22 16l9 7M42 16l-9 7" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="26" cy="34" r="3" fill="#fb7299"/>
+          <circle cx="38" cy="34" r="3" fill="#fb7299"/>
+        </svg>
+      </span>
+      <span>b站网页版</span>
+    </a>
+    <button class="burger" id="burger" aria-label="展开导航" aria-expanded="false" aria-controls="mainnav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#features">网页功能</a>
+      <a href="#usage">使用步骤</a>
+      <a href="#compare">端侧对比</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">获取客户端</a>
+    </nav>
+    <a class="nav-cta" href="https://www.bilibili.com/" target="_blank" rel="noopener">进入官网</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>浏览器直达 · 免安装使用</span>
+        <h1><span class="hl">b站网页版</span></h1>
+        <p class="lede">在电脑浏览器打开即用的哔哩哔哩。想看番剧、查攻略、跟直播、翻收藏夹，不必另装软件；登录后与手机端共享账号数据，网页端也能完成大部分日常观看与互动操作。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.bilibili.com/" target="_blank" rel="noopener">
+            打开b站网页版
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#usage">查看使用步骤</a>
+        </div>
+        <div class="hero-note">
+          <span><svg class="dot-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>无需下载安装包</span>
+          <span><svg class="dot-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>账号与收藏同步</span>
+          <span><svg class="dot-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>支持网页全屏播放</span>
+        </div>
+      </div>
+
+      <div class="player" aria-label="b站网页版播放界面示意">
+        <div class="screen">
+          <div class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.53.85l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5z"/></svg>
+          </div>
+          <span class="screen-tag">网页播放器 · 1080P</span>
+          <div class="progress" aria-hidden="true"><i></i></div>
+        </div>
+        <div class="meta">
+          <span class="avatar" aria-hidden="true"></span>
+          <div class="meta-lines">
+            <b>分区浏览 · 弹幕与评论一屏可见</b>
+            <small>登录后可同步观看记录与收藏</small>
+          </div>
+          <span class="pill">网页版</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">网页功能</div>
+        <h2>在浏览器里，b站网页版能做什么</h2>
+        <p>网页端把观看、搜索、互动和账号管理放在同一页面结构里，适合用键盘和鼠标完成长时段的内容浏览。下面三块是访问者最常使用的部分。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2.5"/><path d="M8 21h8M12 18v3"/></svg>
+          </span>
+          <h3>视频与番剧在线观看</h3>
+          <p>首页推荐、分区列表与搜索页都能直接点开播放。播放器支持清晰度切换、倍速、网页全屏与画中画，弹幕开关和透明度可在播放设置里调整。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </span>
+          <h3>搜索与分区筛选</h3>
+          <p>顶部搜索框可按关键词查找视频、番剧、专栏与用户，结果页提供排序和时长筛选。动画、游戏、知识、科技等分区适合按兴趣逐层浏览。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <h3>账号、收藏与历史</h3>
+          <p>扫码或账号密码登录后，收藏夹、历史记录、稍后再看与关注列表与移动端保持一致，换设备继续看不用重复查找。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT -->
+  <section id="compare" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:22px">
+          <div class="sec-kicker">端侧对比</div>
+          <h2>网页版与客户端，按场景选择</h2>
+          <p>b站网页版省去安装步骤，适合公共电脑、临时查看和边工作边看；客户端则在离线缓存与系统级通知上更占优势。两者的账号内容是同一套。</p>
+        </div>
+        <div class="feature-list">
+          <div class="feature">
+            <span class="num">01</span>
+            <div>
+              <h3>临时使用更方便</h3>
+              <p>在他人电脑或办公环境打开浏览器即可访问，退出登录后不留下本地缓存视频，适合短时间查资料或看一段教程。</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="num">02</span>
+            <div>
+              <h3>多标签并行浏览</h3>
+              <p>可以同时开多个页面，一边看视频一边查专栏或对照攻略，用浏览器标签页管理比在客户端内切换更直观。</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="num">03</span>
+            <div>
+              <h3>适合大屏与分屏</h3>
+              <p>在显示器上配合网页全屏、剧场模式，画面占比更高；分屏时也能把播放器固定在窗口一侧。</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="num">04</span>
+            <div>
+              <h3>需要离线缓存时选客户端</h3>
+              <p>如果经常在无网络环境观看，客户端提供的缓存下载更合适；网页版侧重在线播放与即时访问。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="aside-box">
+        <h3>网页版使用要点</h3>
+        <ul>
+          <li>建议使用较新版本的 Chrome、Edge 或 Safari，播放兼容性更好。</li>
+          <li>登录优先扫码，公共设备用完记得退出账号。</li>
+          <li>播放卡顿时先切换清晰度，再检查网络与浏览器硬件加速设置。</li>
+          <li>开启浏览器通知后，可接收关注 UP 主的更新提醒。</li>
+        </ul>
+        <div class="aside-foot">以上为网页端通用操作习惯，具体功能入口以页面实际显示为准。</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="usage">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">使用步骤</div>
+        <h2>第一次打开b站网页版，按这四步走</h2>
+        <p>从进入站点到正常观看，通常只需要几分钟。以下流程按访问顺序排列，便于对照操作。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>访问站点</h3>
+          <p>在浏览器地址栏输入哔哩哔哩官网域名并回车，进入网页版首页，无需下载任何安装包。</p>
+        </div>
+        <div class="step">
+          <h3>登录账号</h3>
+          <p>点击右上角登录，用手机客户端扫码或输入账号信息，完成后头像会显示在页面顶部。</p>
+        </div>
+        <div class="step">
+          <h3>找到内容</h3>
+          <p>用顶部搜索框输入关键词，或从分区导航进入动画、游戏、知识等板块挑选视频。</p>
+        </div>
+        <div class="step">
+          <h3>调整播放</h3>
+          <p>在播放器内设置清晰度、倍速与弹幕显示，需要专注时切换网页全屏或剧场模式。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">常见问题</div>
+        <h2>关于b站网页版的几个疑问</h2>
+        <p>以下回答围绕网页端的使用条件与操作范围展开，不涉及未公开的功能安排。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>不登录能用b站网页版吗？</summary>
+          <p>可以浏览首页推荐、搜索和播放公开视频。收藏、关注、发弹幕与评论、查看历史记录等需要登录后才能使用，登录方式支持扫码与账号密码。</p>
+        </details>
+        <details>
+          <summary>网页版和手机端的内容会同步吗？</summary>
+          <p>同一账号下的收藏夹、关注列表与观看记录属于账号数据，在网页版登录后可以查看并继续使用；具体展示顺序与入口位置可能随页面版本调整。</p>
+        </details>
+        <details>
+          <summary>网页播放卡顿怎么处理？</summary>
+          <p>先尝试降低清晰度，再关闭其他占用带宽的标签页；若仍卡顿，可检查浏览器是否开启硬件加速，或更换为较新版本的主流浏览器重试。</p>
+        </details>
+        <details>
+          <summary>网页端支持下载视频吗？</summary>
+          <p>网页版以在线播放为主，不提供面向普通用户的离线缓存入口。需要离线观看时，可考虑使用官方客户端提供的缓存功能。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD BAND -->
+  <section id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>需要离线观看？获取官方客户端</h2>
+          <p>b站网页版适合在线浏览，若你常在通勤或无网络环境观看，官方客户端提供缓存下载与更完整的本地播放体验。下载入口正在准备中。</p>
+          <div class="dl-note">当前按钮暂未开放，开放后将指向官方下载页面。</div>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 25h34v17a6 6 0 0 1-6 6H21a6 6 0 0 1-6-6z" fill="#fff"/>
+              <path d="M22 16l9 7M42 16l-9 7" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="26" cy="34" r="3" fill="#fb7299"/>
+              <circle cx="38" cy="34" r="3" fill="#fb7299"/>
+            </svg>
+          </span>
+          <span>b站网页版</span>
+        </a>
+        <p>关于b站网页版的访问入口、功能范围与使用方式的说明页，帮助你在浏览器中完成观看、搜索与账号同步等日常操作。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#features">网页功能</a></li>
+          <li><a href="#usage">使用步骤</a></li>
+          <li><a href="#compare">端侧对比</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>官方入口</h4>
+        <ul>
+          <li><a href="https://www.bilibili.com/" target="_blank" rel="noopener">哔哩哔哩官网</a></li>
+          <li><a href="https://www.bilibili.com/v/anime/" target="_blank" rel="noopener">动画分区</a></li>
+          <li><a href="https://www.bilibili.com/v/game/" target="_blank" rel="noopener">游戏分区</a></li>
+          <li><a href="https://www.bilibili.com/v/knowledge/" target="_blank" rel="noopener">知识分区</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>b站网页版 · 浏览器端使用说明</span>
+      <span>内容以官方页面实际显示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burger');
+    var nav = document.getElementById('mainnav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  })();
+</script>
+</body>
+  </html>
