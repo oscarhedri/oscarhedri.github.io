@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欧乐影院-在线影视观看_高清电影与剧集资源_欧乐影院首页</title>
+<meta name="description" content="欧乐影院首页提供在线影视观看入口，汇集高清电影、热播剧集与片单推荐。欧乐影院帮助你按类型快速找到想看的影片，了解观影指南与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161b2c'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23f2b544' stroke-width='3'/%3E%3Cpath d='M27 24l14 8-14 8z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1420;
+  --bg-soft:#161b2c;
+  --card:#1c2336;
+  --line:#2a3350;
+  --text:#e9edf6;
+  --muted:#9aa6c1;
+  --accent:#f2b544;
+  --accent-soft:rgba(242,181,68,.12);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,20,32,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.12rem;letter-spacing:.4px}
+.brand .mark{width:34px;height:34px;flex:none}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a{
+  display:inline-block;padding:7px 13px;border-radius:999px;
+  font-size:.92rem;color:var(--muted);transition:.2s;
+}
+nav a:hover,nav a:focus-visible{background:var(--accent-soft);color:var(--accent)}
+.nav-cta{
+  background:var(--accent);color:#1a1204;font-weight:600;font-size:.9rem;
+  padding:8px 18px;border-radius:999px;white-space:nowrap;
+}
+.nav-cta:hover{filter:brightness(1.08)}
+
+/* Hero */
+.hero{
+  padding:56px 0 44px;
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(242,181,68,.16),transparent 70%),
+    radial-gradient(700px 340px at 0% 110%,rgba(88,124,255,.14),transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.82rem;color:var(--accent);
+  background:var(--accent-soft);border:1px solid rgba(242,181,68,.3);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.25;letter-spacing:.5px;margin-bottom:16px}
+.hero p{color:var(--muted);max-width:46ch;font-size:1.02rem}
+.hero-actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--accent);color:#1a1204;font-weight:600;
+  padding:12px 26px;border-radius:10px;transition:.2s;
+}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{
+  border:1px solid var(--line);color:var(--text);
+  padding:12px 24px;border-radius:10px;transition:.2s;background:transparent;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-art{
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:linear-gradient(160deg,#1b2235,#121828);
+}
+.hero-art figcaption{
+  font-size:.78rem;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line);
+}
+
+/* Sections */
+section{padding:56px 0}
+.sec-head{margin-bottom:28px}
+.sec-head h2{font-size:1.5rem;letter-spacing:.4px;margin-bottom:8px}
+.sec-head p{color:var(--muted);font-size:.95rem;max-width:60ch}
+h3{font-size:1.02rem;margin-bottom:8px}
+
+/* Cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px;transition:.2s;
+}
+.card:hover{border-color:rgba(242,181,68,.45);transform:translateY(-2px)}
+.card p{color:var(--muted);font-size:.93rem}
+.tag{
+  display:inline-block;font-size:.72rem;color:var(--accent);
+  background:var(--accent-soft);border-radius:6px;padding:2px 8px;margin-bottom:10px;
+}
+.poster{
+  aspect-ratio:16/9;border-radius:10px;margin-bottom:14px;
+  background:linear-gradient(135deg,#232c44,#151b2b);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);
+}
+.poster svg{width:44px;height:44px;opacity:.85}
+
+/* List */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.steps li{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;counter-increment:s;
+}
+.steps li::before{
+  content:"0" counter(s);
+  display:block;color:var(--accent);font-weight:700;font-size:1.05rem;margin-bottom:8px;
+}
+.steps p{color:var(--muted);font-size:.92rem}
+
+/* FAQ */
+.faq details{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;margin-bottom:12px;
+}
+.faq summary{cursor:pointer;font-weight:600;font-size:.98rem;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--accent);font-weight:700}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);font-size:.92rem;margin-top:10px}
+
+/* Download band */
+.dl-band{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;
+  padding:32px;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+}
+.dl-band h2{font-size:1.28rem;margin-bottom:6px}
+.dl-band p{color:var(--muted);font-size:.93rem;max-width:52ch}
+.btn-download{
+  background:var(--accent);color:#1a1204;font-weight:600;
+  padding:12px 30px;border-radius:10px;
+  pointer-events:none;opacity:.95;
+}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);padding:36px 0 44px;
+  background:#0c1019;color:var(--muted);font-size:.88rem;
+}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.foot-brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700}
+.foot-brand .mark{width:28px;height:28px}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;font-size:.82rem;line-height:1.9}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-art{order:-1}
+  .grid-3,.grid-2,.steps{grid-template-columns:1fr}
+  section{padding:40px 0}
+  .hero{padding:36px 0 32px}
+  .nav-bar{padding:10px 0}
+  nav ul{gap:2px}
+  nav a{padding:6px 10px;font-size:.86rem}
+  .dl-band{padding:24px}
+}
+@media (max-width:420px){
+  .brand{font-size:1rem}
+  .nav-cta{padding:7px 14px;font-size:.84rem}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-bar">
+    <a class="brand" href="#top" aria-label="欧乐影院首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1c2336"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="#f2b544" stroke-width="3"/>
+        <path d="M26 23l16 9-16 9z" fill="#f2b544"/>
+      </svg>
+      <span>欧乐影院</span>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#top">首页</a></li>
+        <li><a href="#films">影片推荐</a></li>
+        <li><a href="#guide">观影指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#films">开始观影</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">在线影视 · 高清片源 · 片单整理</span>
+        <h1>欧乐影院</h1>
+        <p>欧乐影院是一个面向影视爱好者的在线观影首页，把热门电影、连载剧集与专题片单集中呈现。打开页面即可按类型浏览，找到想看的作品与对应的观看入口，省去在多个站点之间来回跳转的时间。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#films">浏览影片推荐</a>
+          <a class="btn-ghost" href="#guide">查看观影指南</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <svg viewBox="0 0 420 250" role="img" aria-label="欧乐影院片单与播放示意插画">
+          <rect width="420" height="250" fill="#131a2a"/>
+          <rect x="30" y="30" width="360" height="150" rx="12" fill="#1c2336" stroke="#2a3350"/>
+          <circle cx="210" cy="105" r="34" fill="none" stroke="#f2b544" stroke-width="3"/>
+          <path d="M199 88l30 17-30 17z" fill="#f2b544"/>
+          <rect x="30" y="200" width="110" height="10" rx="5" fill="#2a3350"/>
+          <rect x="30" y="218" width="70" height="8" rx="4" fill="#232c44"/>
+          <rect x="170" y="200" width="90" height="10" rx="5" fill="#2a3350"/>
+          <rect x="280" y="200" width="110" height="10" rx="5" fill="#2a3350"/>
+          <rect x="280" y="218" width="60" height="8" rx="4" fill="#232c44"/>
+        </svg>
+        <figcaption>片单、剧集与专题在首页统一归档，便于逐类查看。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="films">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影片推荐与片单入口</h2>
+        <p>欧乐影院把内容按观看场景分组：想要一部完整的电影、想追一部连载剧集，或者只想随手翻翻专题，都能在下面找到对应的入口。栏目只做分类与引导，具体片源以站内实际收录为准。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="poster">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5v4M16 5v4"/></svg>
+          </div>
+          <span class="tag">高清电影</span>
+          <h3>单片观看</h3>
+          <p>适合晚间一次性看完的作品，按剧情、动作、喜剧等大类陈列。首页先给出片名与简要看点，再进入详情页确认时长与版本信息。</p>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          </div>
+          <span class="tag">连载剧集</span>
+          <h3>追剧更新</h3>
+          <p>按更新的先后顺序排列剧集，标明当前可看的集数范围。想连续追剧的观众可以从列表直接进入，避免反复搜索同一部作品。</p>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <span class="tag">专题片单</span>
+          <h3>主题合集</h3>
+          <p>围绕导演、题材或年代整理的合集，帮助观众在短时间内确定观看方向。片单会随收录情况调整，以页面展示为准。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>在欧乐影院找到想看的影片</h2>
+        <p>观影需求通常分三步：先确定看什么类型，再核对片源是否可看，最后进入播放。下面把这三步拆开说明，让第一次访问的观众也能顺畅使用。</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>按类型筛选</h3>
+          <p>从电影、剧集、专题三个入口进入，再按题材缩小范围。类型名称保持常见叫法，减少理解成本。</p>
+        </li>
+        <li>
+          <h3>核对片源信息</h3>
+          <p>进入详情前先看片名、年份与可看集数，确认与预期一致。信息以站内实际标注为准，不做额外承诺。</p>
+        </li>
+        <li>
+          <h3>进入播放页</h3>
+          <p>确认无误后点击播放入口。网络与设备条件会影响加载速度，遇到缓冲可稍等或切换清晰度。</p>
+        </li>
+      </ol>
+      <div class="grid-2" style="margin-top:26px">
+        <article class="card">
+          <span class="tag">选片思路</span>
+          <h3>先定场景，再定片名</h3>
+          <p>时间充裕时可以挑一部长片，碎片时间更适合看单集剧集。欧乐影院的分类方式围绕观看时长设计，先想清楚能看多久，比漫无目的地翻列表更高效。</p>
+        </article>
+        <article class="card">
+          <span class="tag">使用习惯</span>
+          <h3>收藏与回访</h3>
+          <p>遇到感兴趣的片单可以先记下片名，下次回到首页继续寻找。剧集类内容建议以页面显示的更新状态为准，避免按记忆误判进度。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>欧乐影院常见问题</h2>
+        <p>以下是访问欧乐影院时较常被问到的几点，回答只针对页面本身能确认的内容，涉及片源与版权的部分以实际收录和页面提示为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>欧乐影院首页主要提供什么？</summary>
+          <p>首页提供影片分类、片单入口与观影指引，帮助观众快速定位想看的内容。它是一个内容索引型页面，不在此页直接承载播放功能。</p>
+        </details>
+        <details>
+          <summary>找不到想看的影片怎么办？</summary>
+          <p>可以先换一个相近的类型或年份范围再试。站内收录会调整，某些作品可能暂时不在列表中。若页面没有出现目标影片，说明当前未收录，不必反复刷新。</p>
+        </details>
+        <details>
+          <summary>剧集更新进度在哪里确认？</summary>
+          <p>以剧集详情中标注的集数与状态为准。首页列表只做概括展示，具体进度以进入详情后的信息为准，两者不一致时以后者为准。</p>
+        </details>
+        <details>
+          <summary>观看时画面卡顿如何处理？</summary>
+          <p>先确认网络是否稳定，再尝试降低清晰度或稍等缓冲。设备性能与同时运行的程序也会影响播放流畅度，关闭后台应用通常有帮助。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="dl-band">
+        <div>
+          <h2>下载主题资料包</h2>
+          <p>包含首页栏目结构与观影指引的整理稿，方便离线查看分类思路。当前下载地址尚未开放，可在开放后再次访问本页获取。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1c2336"/>
+          <circle cx="32" cy="32" r="17" fill="none" stroke="#f2b544" stroke-width="3"/>
+          <path d="M26 23l16 9-16 9z" fill="#f2b544"/>
+        </svg>
+        <span>欧乐影院</span>
+      </div>
+      <div class="foot-links">
+        <a href="#films">影片推荐</a>
+        <a href="#guide">观影指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#top">返回顶部</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>欧乐影院首页用于整理影片分类与观影入口，页面内容随站内收录情况调整。片名、年份与集数等信息以详情页实际标注为准。</p>
+      <p>© 欧乐影院 · 本页为内容导航页面，不存储影片文件。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
