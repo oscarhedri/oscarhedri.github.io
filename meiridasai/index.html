@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛爆料黑料-大赛爆料线索_黑料事件时间线_往期爆料回顾</title>
+<meta name="description" content="每日大赛爆料黑料首页，汇总各大赛事爆料线索、黑料事件时间线与往期回顾，提供投稿入口与核实说明，帮助访问者按类别检索与跟进赛事爆料信息。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1b1f'/%3E%3Cpath d='M18 44V22h8l6 12 6-12h8v22h-7V33l-5 10h-4l-5-10v11z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c1b1f;
+  --ink-soft:#4a4850;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --line:#e3ded4;
+  --gold:#b8862b;
+  --gold-soft:#f2b544;
+  --deep:#26232b;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,244,238,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px}
+.logo-mark{width:38px;height:38px;flex:0 0 38px;border-radius:10px;background:var(--deep);display:grid;place-items:center}
+.logo-mark svg{width:22px;height:22px}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  font-size:14.5px;padding:7px 12px;border-radius:999px;color:var(--ink-soft);
+  transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:#ebe6db;color:var(--ink)}
+.head-cta{
+  font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px;
+  background:var(--deep);color:#fff;transition:transform .2s;
+}
+.head-cta:hover{transform:translateY(-1px)}
+
+/* 首屏 */
+.hero{padding:52px 0 44px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:2px;color:var(--gold);font-weight:700;
+  text-transform:uppercase;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-soft)}
+h1{font-size:clamp(28px,4.2vw,46px);line-height:1.22;font-weight:800;letter-spacing:-.5px}
+.hero-lead{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:38em}
+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:15px;font-weight:700;
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-primary{background:var(--deep);color:#fff;box-shadow:0 8px 20px -10px rgba(38,35,43,.8)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--gold-soft)}
+.btn[aria-disabled="true"]{opacity:.85;cursor:default}
+.hero-stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.stat b{display:block;font-size:22px;font-weight:800;color:var(--deep)}
+.stat span{font-size:13px;color:var(--ink-soft)}
+.hero-art{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;
+  padding:22px;box-shadow:0 18px 40px -28px rgba(38,35,43,.55);
+}
+.art-title{font-size:13px;letter-spacing:1.6px;color:var(--gold);font-weight:700;margin-bottom:14px}
+.art-list{list-style:none;display:grid;gap:12px}
+.art-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink-soft)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--gold-soft);flex:0 0 9px;margin-top:8px}
+
+/* 通用区块 */
+section{padding:56px 0}
+.sec-head{max-width:760px;margin-bottom:30px}
+.sec-tag{font-size:12.5px;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:10px}
+h2{font-size:clamp(21px,2.6vw,29px);font-weight:800;letter-spacing:-.3px}
+.sec-desc{margin-top:10px;color:var(--ink-soft);font-size:15px}
+
+/* 线索卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;display:flex;flex-direction:column;gap:12px;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.card:hover{transform:translateY(-3px);border-color:#d8cfbe;box-shadow:0 16px 32px -24px rgba(38,35,43,.6)}
+.card-tag{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px}
+.card h3{font-size:17px;font-weight:800;line-height:1.45}
+.card p{font-size:14.5px;color:var(--ink-soft);flex:1}
+.card-meta{font-size:12.5px;color:#8b8792;border-top:1px dashed var(--line);padding-top:12px;display:flex;justify-content:space-between;gap:10px}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:26px;margin-top:8px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding:0 0 26px 8px}
+.tl-item::before{
+  content:"";position:absolute;left:-26px;top:7px;width:13px;height:13px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--gold-soft);
+}
+.tl-item:last-child{padding-bottom:0}
+.tl-date{font-size:12.5px;letter-spacing:1px;color:var(--gold);font-weight:700}
+.tl-item h3{font-size:16.5px;font-weight:800;margin:4px 0 6px}
+.tl-item p{font-size:14.5px;color:var(--ink-soft);max-width:62em}
+
+/* 检索区 */
+.tool{
+  background:var(--deep);color:#f3efe7;border-radius:20px;padding:36px;
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+}
+.tool h2{color:#fff}
+.tool p{color:#c8c2b6;font-size:14.5px;margin-top:10px}
+.search-box{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.search-box input{
+  flex:1 1 200px;min-width:0;padding:12px 16px;border-radius:999px;border:1px solid #4a4650;
+  background:#332f38;color:#fff;font-size:14.5px;font-family:inherit;
+}
+.search-box input::placeholder{color:#9a949f}
+.search-box input:focus{outline:2px solid var(--gold-soft);outline-offset:1px}
+.search-box button{
+  padding:12px 22px;border-radius:999px;border:0;background:var(--gold-soft);color:#241f16;
+  font-weight:800;font-size:14.5px;cursor:pointer;font-family:inherit;transition:filter .2s;
+}
+.search-box button:hover{filter:brightness(1.06)}
+.result-note{font-size:13px;color:#a9a2b0;margin-top:12px;min-height:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chip{
+  font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid #4a4650;
+  color:#d9d3c8;background:transparent;cursor:pointer;font-family:inherit;transition:background .2s;
+}
+.chip:hover{background:#3a3640}
+.tool-side{list-style:none;display:grid;gap:14px}
+.tool-side li{font-size:14.5px;color:#cfc9bd;display:flex;gap:10px}
+.tool-side .dot{background:var(--gold-soft)}
+
+/* 须知 */
+.notes{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.note{
+  background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold-soft);
+  border-radius:10px;padding:22px 24px;
+}
+.note h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.note p{font-size:14.5px;color:var(--ink-soft)}
+
+/* 投稿 */
+.submit{
+  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;
+}
+.submit h2{font-size:22px}
+.submit p{font-size:14.5px;color:var(--ink-soft);margin-top:8px;max-width:52em}
+.submit-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* 页脚 */
+footer{background:var(--deep);color:#b8b2a8;padding:40px 0 26px;margin-top:20px}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid #3a3641}
+.foot-brand{color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px}
+.foot-brand .logo-mark{width:32px;height:32px;flex:0 0 32px;background:#3a3641}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.foot-links a:hover{color:#fff}
+.foot-bottom{padding-top:20px;font-size:13px;line-height:1.9;color:#8f89a0}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .cards{grid-template-columns:1fr}
+  .tool{grid-template-columns:1fr;padding:28px}
+  .notes{grid-template-columns:1fr}
+  .submit{grid-template-columns:1fr;padding:26px}
+}
+@media(max-width:640px){
+  .head-inner{gap:12px;padding:12px 0}
+  .nav{order:3;width:100%;margin-left:0;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  .nav a{white-space:nowrap}
+  .head-cta{margin-left:auto}
+  section{padding:42px 0}
+  .hero{padding:36px 0 32px}
+  .hero-stats{gap:20px}
+  .btn{padding:11px 20px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="每日大赛爆料黑料 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 18V6h4l3 7 3-7h4v12h-3.4v-6.4L13 16h-2l-2.6-4.4V18z" fill="#f2b544"/></svg>
+      </span>
+      每日大赛爆料黑料
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#leads">爆料线索</a>
+      <a href="#timeline">事件时间线</a>
+      <a href="#search">检索爆料</a>
+      <a href="#notes">核实说明</a>
+      <a href="#submit">投稿入口</a>
+    </nav>
+    <a class="head-cta" href="#leads">浏览最新线索</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">赛事爆料线索站</span>
+        <h1>每日大赛爆料黑料</h1>
+        <p class="hero-lead">每日大赛爆料黑料按类别归集各大赛事中的爆料线索、事件时间线与往期回顾，标明来源与核实状态，方便访问者按赛别、类别与时间快速定位自己关心的内容。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#leads">查看今日线索</a>
+          <a class="btn btn-ghost" href="#timeline">阅读事件时间线</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>6 类</b><span>线索分类</span></div>
+          <div class="stat"><b>3 步</b><span>核实流程</span></div>
+          <div class="stat"><b>每日</b><span>线索更新节奏</span></div>
+        </div>
+      </div>
+      <aside class="hero-art" aria-label="今日爆料要点">
+        <div class="art-title">今日爆料要点</div>
+        <ul class="art-list">
+          <li><span class="dot" aria-hidden="true"></span><span>赛制争议类线索需附赛事章程与公告原文，便于对照。</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span>评审与评分相关爆料，统一归入评分争议分类。</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span>每条线索保留投稿时间、来源与当前核实状态。</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span>未经证实的说法标注为待核实，不作结论性表述。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 线索卡片 -->
+  <section id="leads">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">01 / 线索分类</div>
+        <h2>按类别查看每日大赛爆料黑料</h2>
+        <p class="sec-desc">赛事爆料通常集中在规则、评分、资格与流程几个方向。下面按类别列出当前归集的线索主题，每类线索在详情页保留原始投稿与核实记录。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-tag">赛制争议</span>
+          <h3>规则临时调整引发的质疑</h3>
+          <p>关注赛事中途修改赛制、晋级名额变动等情形。此类线索需要对照赛事官方公告与章程版本，确认调整时间与生效范围后再记录。</p>
+          <div class="card-meta"><span>来源：公开公告</span><span>状态：待核实</span></div>
+        </article>
+        <article class="card">
+          <span class="card-tag">评分争议</span>
+          <h3>评审打分与公示差异</h3>
+          <p>涉及评审打分表与最终公示成绩不一致的爆料，需同时提供评分记录与公示截图，按场次和时间逐条登记，避免与赛事无关的说法混入。</p>
+          <div class="card-meta"><span>来源：投稿线索</span><span>状态：整理中</span></div>
+        </article>
+        <article class="card">
+          <span class="card-tag">参赛资格</span>
+          <h3>报名条件与资格复核</h3>
+          <p>围绕报名门槛、资格复核结果与替补名单的爆料，重点核对报名截止时间与复核公告，区分程序性说明与实质争议。</p>
+          <div class="card-meta"><span>来源：报名公告</span><span>状态：待核实</span></div>
+        </article>
+        <article class="card">
+          <span class="card-tag">流程记录</span>
+          <h3>现场流程与记录缺失</h3>
+          <p>关于赛程执行、抽签环节与现场记录不完整的爆料，需列出具体场次与环节，并说明缺失的是文字记录、影像还是公告。</p>
+          <div class="card-meta"><span>来源：现场投稿</span><span>状态：待补充</span></div>
+        </article>
+        <article class="card">
+          <span class="card-tag">信息澄清</span>
+          <h3>传言与官方回应对照</h3>
+          <p>对流传较广的说法，同步列出赛事方回应或声明，标注时间先后。澄清类条目只做对照整理，不替代任何一方的判断。</p>
+          <div class="card-meta"><span>来源：官方声明</span><span>状态：已对照</span></div>
+        </article>
+        <article class="card">
+          <span class="card-tag">往期回顾</span>
+          <h3>历史爆料归档与复盘</h3>
+          <p>按赛事周期把过去归集的爆料线索归档，记录后续是否出现新证据或新回应，形成可回溯的往期爆料目录。</p>
+          <div class="card-meta"><span>来源：站内归档</span><span>状态：持续更新</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 时间线 -->
+  <section id="timeline" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">02 / 事件时间线</div>
+        <h2>每日大赛爆料黑料的时间顺序整理</h2>
+        <p class="sec-desc">爆料往往由公告、投稿、回应几个环节组成。下面按事件推进顺序展示一次典型爆料从出现到归档的过程，帮助访问者理解每条线索所处阶段。</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">阶段一 · 线索出现</div>
+          <h3>投稿进入待处理队列</h3>
+          <p>访问者通过投稿入口提交线索，注明赛事名称、涉及场次与可核对材料。此阶段只登记原始信息，不对外判断真伪。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">阶段二 · 材料对照</div>
+          <h3>与公开公告逐项比对</h3>
+          <p>编辑按赛事章程、公告与公示记录进行对照，标注一致、矛盾或缺少材料的部分，并写明材料出处与时间。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">阶段三 · 状态标注</div>
+          <h3>给出待核实或已对照标记</h3>
+          <p>根据比对结果标注线索状态。缺少关键材料的条目保留为待核实或待补充，不下结论性判断。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">阶段四 · 归档回顾</div>
+          <h3>进入往期爆料目录</h3>
+          <p>事件结束后按赛事周期归档，若后续出现新回应或新证据，在原有条目下追加更新记录，保留完整变更痕迹。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 检索 -->
+  <section id="search" style="padding-top:0">
+    <div class="wrap">
+      <div class="tool">
+        <div>
+          <h2>检索每日大赛爆料黑料</h2>
+          <p>输入赛事名称或线索类别关键词，即可在当前已归集的条目中筛选。检索结果只覆盖本页列出的分类主题。</p>
+          <form class="search-box" id="searchForm" role="search" onsubmit="return false;">
+            <label class="sr-only" for="q">检索爆料线索</label>
+            <input id="q" type="search" placeholder="例如：评分、赛制、资格" autocomplete="off">
+            <button type="button" id="searchBtn">检索</button>
+          </form>
+          <div class="chips" id="chips">
+            <button class="chip" type="button">赛制争议</button>
+            <button class="chip" type="button">评分争议</button>
+            <button class="chip" type="button">参赛资格</button>
+            <button class="chip" type="button">流程记录</button>
+            <button class="chip" type="button">信息澄清</button>
+            <button class="chip" type="button">往期回顾</button>
+          </div>
+          <div class="result-note" id="resultNote" aria-live="polite"></div>
+        </div>
+        <ul class="tool-side">
+          <li><span class="dot" aria-hidden="true"></span><span>按类别检索：六大分类覆盖规则、评分、资格、流程、澄清与归档。</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span>按关键词检索：支持赛事名称与线索主题词组合筛选。</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span>结果附带状态标记，便于区分待核实与已对照条目。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核实说明 -->
+  <section id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">03 / 核实说明</div>
+        <h2>每日大赛爆料黑料的记录原则</h2>
+        <p class="sec-desc">爆料信息真假混杂，本站只做线索归集与材料对照，不替任何一方下结论。以下原则贯穿所有条目。</p>
+      </div>
+      <div class="notes">
+        <div class="note">
+          <h3>只记录可核对的内容</h3>
+          <p>每条线索尽量附上公告、公示或截图等可核对材料。无法提供出处且无法对照的说法，仅保留为匿名投稿，不进入分类目录。</p>
+        </div>
+        <div class="note">
+          <h3>状态标注先于结论</h3>
+          <p>待核实、待补充、已对照三种状态对应不同材料完整度。状态只说明整理进度，不代表对事件真实性的最终判断。</p>
+        </div>
+        <div class="note">
+          <h3>区分事实与转述</h3>
+          <p>赛事公告原文按事实记录，投稿人陈述按转述记录，两者分开呈现。回应类内容注明发布时间，便于按时间线回溯。</p>
+        </div>
+        <div class="note">
+          <h3>保护当事人信息</h3>
+          <p>涉及个人身份、联系方式等隐私信息的内容不作公开，只保留与赛事程序相关的部分，避免对无关人员造成影响。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 投稿 -->
+  <section id="submit" style="padding-top:0">
+    <div class="wrap">
+      <div class="submit">
+        <div>
+          <h2>向每日大赛爆料黑料提交线索</h2>
+          <p>如果你掌握某场赛事的规则调整、评分记录或资格复核材料，可按赛事名称、场次、材料出处三要素整理后提交。提交内容会先进入待处理队列，经材料对照后再决定是否归入分类目录。</p>
+        </div>
+        <div class="submit-actions">
+          <a class="btn btn-primary" href="#search">先检索是否已有</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载投稿模板</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 18V6h4l3 7 3-7h4v12h-3.4v-6.4L13 16h-2l-2.6-4.4V18z" fill="#f2b544"/></svg>
+        </span>
+        每日大赛爆料黑料
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+        <a href="#leads">爆料线索</a>
+        <a href="#timeline">事件时间线</a>
+        <a href="#search">检索爆料</a>
+        <a href="#notes">核实说明</a>
+        <a href="#submit">投稿入口</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      每日大赛爆料黑料为赛事爆料线索归集页，内容以公开公告、公示记录与投稿材料为整理依据，状态标注仅表示整理进度，不构成对任何事件的事实认定或评价。涉及个人隐私的信息不予公开。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('q');
+  var btn = document.getElementById('searchBtn');
+  var note = document.getElementById('resultNote');
+  var chips = document.querySelectorAll('#chips .chip');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#leads .card'));
+
+  function runSearch(term){
+    term = (term || '').trim();
+    if(!term){
+      cards.forEach(function(c){ c.style.display = ''; });
+      note.textContent = '请输入关键词，或点击下方分类快速筛选。';
+      return;
+    }
+    var hit = 0;
+    cards.forEach(function(c){
+      var text = c.textContent;
+      var match = text.indexOf(term) > -1;
+      c.style.display = match ? '' : 'none';
+      if(match) hit++;
+    });
+    if(hit === 0){
+      cards.forEach(function(c){ c.style.display = ''; });
+      note.textContent = '未找到与“' + term + '”直接匹配的条目，已恢复显示全部线索。';
+    }else{
+      note.textContent = '已筛选出 ' + hit + ' 条与“' + term + '”相关的线索。';
+    }
+  }
+
+  btn.addEventListener('click', function(){ runSearch(input.value); });
+  form.addEventListener('submit', function(e){ e.preventDefault(); runSearch(input.value); });
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); runSearch(input.value); }
+  });
+  input.addEventListener('input', function(){
+    if(input.value.trim() === ''){ runSearch(''); }
+  });
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var t = chip.textContent.trim();
+      input.value = t;
+      runSearch(t);
+      document.getElementById('leads').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
